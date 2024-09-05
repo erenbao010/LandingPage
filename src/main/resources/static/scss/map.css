@@ -1,0 +1,274 @@
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700";
+/* ### main Menu Overlay */
+/* Hover */
+@-webkit-keyframes Floatingx {
+  from {
+    -webkit-transform: translate(0, 0px); }
+  65% {
+    -webkit-transform: translate(0, 5px); }
+  to {
+    -webkit-transform: translate(0, 0px); } }
+@-webkit-keyframes Floatingx2 {
+  from {
+    -webkit-transform: translate(0, 0px); }
+  45% {
+    -webkit-transform: translate(0, 8px); }
+  to {
+    -webkit-transform: translate(0, 0px); } }
+@-webkit-keyframes Floatingx3 {
+  from {
+    -webkit-transform: translate(0, 0px); }
+  50% {
+    -webkit-transform: translate(2px, 4px); }
+  to {
+    -webkit-transform: translate(0, 0px); } }
+.navire {
+  background: url(https://res.cloudinary.com/dioieuprs/image/upload/v1471359656/navire_n02z6s.png) no-repeat;
+  background-size: 100% auto;
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  top: -50px;
+  right: -130px;
+  -webkit-transition: right 0.2s ease;
+  transition: right 0.2s ease; }
+
+.mainMenuOverlay.open .wrap {
+  top: 0; }
+  .mainMenuOverlay.open .wrap .navire {
+    right: 70%;
+    -webkit-transition: right 28s ease 1s;
+    transition: right 28s ease 1s; }
+  .mainMenuOverlay.open .wrap .toggleMenu {
+    top: calc(50% - 65px);
+    background-color: #ffffff; }
+  .mainMenuOverlay.open .wrap .itemMenuBox {
+    width: 325px;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s; }
+
+.mainMenuOverlay {
+  display: block;
+  height: 80vh;
+  overflow: hidden;
+  position: relative; }
+  .mainMenuOverlay .wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    height: 100%;
+    -webkit-transition: bottom 0.5s ease;
+    transition: bottom 0.5s ease; }
+    .mainMenuOverlay .wrap .toggleMenu {
+      display: block;
+      background-color: #65B5D0;
+      border: 1px solid #FFF;
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      position: absolute;
+      top: -12px;
+      left: 47%;
+      margin: -31px 0 0 -31px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #FFF;
+      text-align: center;
+      line-height: 62px;
+      -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset, 0 0 16px -4px #063343;
+              box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset, 0 0 16px -4px #063343;
+      -webkit-transition: box-shadow 0.5s ease, top 0.5s ease;
+      -webkit-transition: top 0.5s ease, -webkit-box-shadow 0.5s ease;
+      transition: top 0.5s ease, -webkit-box-shadow 0.5s ease;
+      transition: box-shadow 0.5s ease, top 0.5s ease;
+      transition: box-shadow 0.5s ease, top 0.5s ease, -webkit-box-shadow 0.5s ease; }
+      .mainMenuOverlay .wrap .toggleMenu .wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px; }
+        .mainMenuOverlay .wrap .toggleMenu .wrap img {
+          width: 100%; }
+    .mainMenuOverlay .wrap .itemMenuBox {
+      background: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/go2.png) no-repeat center center;
+      background-size: 28px auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -31px 0 0 -31px;
+      height: 130px;
+      width: 130px;
+      text-align: right;
+      border-radius: 40px;
+      -webkit-transform-origin: 31px 31px;
+      transform-origin: 31px 31px;
+      -webkit-transition: all 1s ease 0.4s;
+      transition: all 1s ease 0.4s; }
+      .mainMenuOverlay .wrap .itemMenuBox .itemMenu {
+        display: inline-block;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        -webkit-transition: all 0.8s ease;
+        transition: all 0.8s ease;
+        color: #FFF;
+        font-size: 28px;
+        line-height: 64px;
+        text-align: center;
+        overflow: hidden;
+        -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset, 0 0 16px -4px #063343;
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset, 0 0 16px -4px #063343; }
+        .mainMenuOverlay .wrap .itemMenuBox .itemMenu .wrap {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          width: 100%;
+          height: 100%;
+          padding: 20px; }
+          .mainMenuOverlay .wrap .itemMenuBox .itemMenu .wrap img {
+            width: 100%; }
+    .mainMenuOverlay .wrap .itemMenuBox.bills {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg); }
+      .mainMenuOverlay .wrap .itemMenuBox.bills .itemMenu {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg); }
+        .mainMenuOverlay .wrap .itemMenuBox.bills .itemMenu:hover {
+          -webkit-transform: rotate(450deg);
+          transform: rotate(450deg); }
+    .mainMenuOverlay .wrap .itemMenuBox.tarsheed {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg); }
+      .mainMenuOverlay .wrap .itemMenuBox.tarsheed .itemMenu {
+        -webkit-transform: rotate(40deg);
+        transform: rotate(40deg); }
+        .mainMenuOverlay .wrap .itemMenuBox.tarsheed .itemMenu:hover {
+          -webkit-transform: rotate(390deg);
+          transform: rotate(390deg); }
+    .mainMenuOverlay .wrap .itemMenuBox.employees {
+      -webkit-transform: rotate(50deg);
+              transform: rotate(50deg); }
+      .mainMenuOverlay .wrap .itemMenuBox.employees .itemMenu {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg); }
+        .mainMenuOverlay .wrap .itemMenuBox.employees .itemMenu:hover {
+          -webkit-transform: rotate(690deg);
+                  transform: rotate(690deg); }
+    .mainMenuOverlay .wrap .itemMenuBox.location {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg); }
+      .mainMenuOverlay .wrap .itemMenuBox.location .itemMenu {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg); }
+        .mainMenuOverlay .wrap .itemMenuBox.location .itemMenu:hover {
+          -webkit-transform: rotate(630deg);
+          transform: rotate(630deg); }
+    .mainMenuOverlay .wrap .itemMenuBox.eservices {
+      -webkit-transform: rotate(150deg);
+      transform: rotate(150deg); }
+      .mainMenuOverlay .wrap .itemMenuBox.eservices .itemMenu {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg); }
+        .mainMenuOverlay .wrap .itemMenuBox.eservices .itemMenu:hover {
+          -webkit-transform: rotate(570deg);
+          transform: rotate(570deg); }
+    .mainMenuOverlay .wrap .itemMenuBox.contact {
+      -webkit-transform: rotate(210deg);
+      transform: rotate(210deg); }
+      .mainMenuOverlay .wrap .itemMenuBox.contact .itemMenu {
+        -webkit-transform: rotate(150deg);
+        transform: rotate(150deg); }
+        .mainMenuOverlay .wrap .itemMenuBox.contact .itemMenu:hover {
+          -webkit-transform: rotate(510deg);
+          transform: rotate(510deg); }
+
+.floating {
+  -webkit-animation-name: Floatingx;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: Floating;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out; }
+
+.floating2 {
+  -webkit-animation-name: Floatingx2;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: Floating2;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out; }
+
+.floating3 {
+  -webkit-animation-name: Floatingx3;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: Floating3;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out; }
+
+.signatureBox {
+  text-align: right;
+  padding: 4px; }
+
+.signatureBox.fixed {
+  position: fixed;
+  bottom: 8px;
+  right: 8px; }
+
+.signature {
+  color: #484848; }
+  .signature a {
+    color: #484848; }
+  .signature:before {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    width: 11px;
+    content: 'Mahmoud'; }
+  .signature:after {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    width: 11px;
+    content: 'NBET';
+    margin-left: 0px;
+    width: 10px; }
+  .signature:hover {
+    color: #484848; }
+    .signature:hover:before {
+      width: 76px; }
+    .signature:hover:after {
+      width: 34px;
+      margin-left: 3px; }
+
+/*# sourceMappingURL=map.css.map */

@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<title>TITLE</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link th:href="@{/admin/css/styles.css}" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<!-- summernote   -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    	<script th:src="@{/admin/summernote/0.8.18-dist/summernote-lite.js}"></script>
+    	<script th:src="@{/admin/summernote/0.8.18-dist/lang/summernote-ko-KR.js}"></script>
+	    <link th:href="@{/admin/summernote/0.8.18-dist/summernote-lite.css}" rel="stylesheet" >
+
+</head>
+<body>
+
+	<header>
+		<div style="height:64px;"></div>
+	</header>
+	
+	<div class="container">
+		<div class="card">
+		  	<div class="card-header">LOGIN</div>
+		  	<div class="card-body">
+		    	<h5 class="card-title"></h5>
+		    	<p class="card-text">
+		   		</p>
+				<form th:action="@{/login}" method="post">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<div class="mb-3">
+						<label for="username" class="form-label">ID</label>
+						<input type="text" class="form-control" id="username" name="username">
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">PW</label>
+						<input type="password" class="form-control" id="password" name="password">
+					</div>
+					<button type="submit" class="btn btn-primary" >확인</button>
+				</form>
+				<br/>
+		    	<a th:href="@{/join}" class="btn btn-primary">회원등록</a>
+		  	</div>
+		</div>
+
+	</div><!-- // container -->
+
+	<footer>
+		<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]</h1>
+		<br>
+		<h1 th:inline="text">username: [[${username}]]</h1>
+	 
+		<!--SYSTEM 역할을 갖는다면 이 글이 보임-->
+		<h3 sec:authorize="hasRole('관리자')">Has '관리자' Role</h3>
+	 	 
+		<!--어떤 역할이건 상관없이 인증이 되었다면 이 글이 보임-->
+		<h3 sec:authorize="isAuthenticated()">Only Authenticated user can see this Text</h3>
+	 
+		<div>
+<!--  			Authorities : <span sec:authentication="principal.authorities"></span> -->
+ 		</div>
+		<br>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <!--  summernote -->
+	<script>
+			//	https://summernote.org/getting-started/#basic-api
+		    $('#itDetails').summernote({
+		        height: 150,
+		        lang: "ko-KR",
+		        focus : true,
+		        toolbar: [
+		            ['fontname', ['fontname']],
+		            ['fontsize', ['fontsize']],
+		            ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+		            ['color', ['forecolor','color']],
+		            ['table', ['table']],
+		            ['para', ['ul', 'ol', 'paragraph']],
+		            ['height', ['height']],
+		            ['insert', ['link', 'picture', 'video']],
+		            ['view', ['codeview','fullscreen', 'help']]
+		        ],
+		        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
+		        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
+		        callbacks: {
+		        	onImageUpload: function(files){
+		        		// 실제 실행 함수 등록
+		        		uploadSummernoteImage(files[0], this)
+		        	}
+		        }
+		    });
+		    function uploadSummernoteImage(file, editor) {
+	            data = new FormData();
+	            data.append("file", file);
+	            $.ajax({
+	                data : data,
+	                type : "POST",
+	                url : "/api/uploadSummernoteImage",
+	                contentType : false,
+	                processData : false,
+	                success : function(data) {
+	                    //항상 업로드된 파일의 url이 있어야 한다.
+	                    console.log(data[0]);
+	                    console.log(data[0].iamgeURL);
+	                    $(editor).summernote('insertImage', data[0].imageURL);
+	                }
+	            });
+	        }
+
+		</script>
+
+</body>
+</html>
+

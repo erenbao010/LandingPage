@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+<head>
+      <style>
+        .logo-wrap-white {
+          border-radius: 8px;
+          background-color: rgba(240, 248, 255, 0.2);
+        }
+      </style>
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+
+    <!-- class="hero-wrap hero-wrap-2" -->
+    <section id="blogSection"
+      class="hero-wrap" th:style="'background-image: url(/api/image?fileName='+${news.newsBanner}+');'">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 pt-5 mt-5 text-center">
+            <!-- <p class="breadcrumbs"><span class="me-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span class="me-2"><a href="blog.html">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p> -->
+            <!-- <h1 id="blogTitle" class="mb-0 bread" style="color: black;">Blog Details</h1> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+    <section class="ftco-section">
+      <div class="container">
+          <div class="row g-lg-5">
+            <div class="col-lg-12 blog-single">
+              <h1 id="blogTitle" class="mb-0 bread" 
+              		style="margin: 0 auto; text-align: center; color: #0a4e80;  font-family: 'Merriweather-Regular', sans-serif;">
+              	[[${news.newsTitle}]]
+              </h1>
+              <h5 id="blogSummary" class="mb-3" style="margin: 0 auto; text-align: center; color: #0a4e80;">
+              	[[${news.newsSummary}]]
+              </h5>
+              <p> </p>
+              <p style="text-align: center;">
+                <img id="blogThums" th:src="@{/api/image(fileName=${news.newsThums})}" alt="" class="img-fluid" style="margin: 0 auto;">
+              </p>
+            </div> <!-- .col-md-8 -->
+            <!-- summernote content -->
+            <div id="blogContent" class="col-lg-12 blog-single" 
+            	th:utext="${news.newsContents}">
+            </div>
+            <!-- end summernote content -->
+
+            <div class="col-lg-12 blog-single" style="background-color: rgba(114,169,138,0.2); text-align: center; ">
+              <a id="blogAnchor" th:href="${news.newsUrl}" class="col-lg-12 col-md-12 button btn" style="color:#67a7a3 ; font-size: 16px;">
+              	[[${news.newsTitle}]]
+              </a>
+            </div>
+
+          </div>
+      </div>
+
+    </section> <!-- .section --> 
+
+<!-- section 하단 banner newsletter -->
+
+    <section class="ftco-intro py-5 bg-primary">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10">
+            <div class="row g-lg-5">
+              <div class="col-md-7 text-lg-right">
+
+                <h2 class="mb-0">Newsletter - Stay tune and get the latest update</h2>
+                <p>Far far away, behind the word mountains</p>
+              </div>
+              <div class="col-md-5 border-left d-flex align-items-center">
+                <form action="#" class="subscribe-form">
+                  <div class="form-group d-flex align-items-center">
+                    <input type="text" class="form-control" placeholder="Enter email address">
+                    <a href="#" class="btn-icon"><span class="fa fa-paper-plane"></span></a>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- END	section 하단 banner newsletter -->
+
+<!--  section 하단 banner 신청 폼 -->
+<!-- 
+    <section class="ftco-intro py-5 bg-primary">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10">
+            <div class="row g-lg-5">
+              <div class="col-md-7 text-lg-right">
+
+                <h2 class="mb-0">Enrolment - </h2>
+                <p>Far far away, behind the word mountains</p>
+                <p>Thông tin thanh toán lệ phí tham gia.</p>
+                <p>Bạn vui lòng thanh toán theo thông tin dưới đây và chụp hình minh chứng</p>
+                <ul>
+                  <li>Số tài khoản: 009698888 (MB BANK - PGD Le Dai Hanh) | 233728888 (ACB)</li>
+                  <li>Tên tài khoản: CTY TNHH ATCOLLABO</li>
+                  <li>Lệ phí tham gia: [[${#numbers.formatInteger(price, 3, 'COMMA') + ' VND'}]] / thí sinh</li>
+                  <li>Nội dung chuyển khoản: Họ & tên người đăng ký _ <br/>SDT (Ví dụ: Nguyen Van A _ 012548628)</li>
+                </ul>
+              </div>
+
+              <div class="col-md-5 border-left d-flex align-items-center">
+                <form id="enrolForm" class="subscribe-form" enctype="multipart/form-data" onsubmit="return sendEnrol();">
+                  <div class="form-group d-flex align-items-center">
+                    <input type="text" class="form-control" name="enrolFor" placeholder="Enter name of course, event">
+                  </div>
+                  <div class="form-group d-flex align-items-center">
+                    <input type="text" class="form-control" name="enrolName" placeholder="Enter your name">
+                  </div>
+                  <div class="form-group d-flex align-items-center">
+                    <input type="number" class="form-control" name="enrolPhone" placeholder="Enter phone number">
+                  </div>
+                  <div class="form-group d-flex align-items-center">
+                    <input type="email" class="form-control" name="enrolEmail" placeholder="Enter email address">
+                  </div>
+                  <div class="form-group d-flex align-items-center">
+                    <input type="number" step="10" class="form-control" name="enrolAge" placeholder="Enter your age">
+                  </div>
+                  <div class="form-group d-flex align-items-center">
+                    <input type="text" class="form-control" name="enrolJob" placeholder="Enter your job">
+                  </div>
+                  <div class="form-group d-flex align-items-center" style="padding-top: 12px;">
+                    <input type="file" class="form-control form-control-sm" name="enrolFile" placeholder="Enter attached">
+                  </div>
+                  <div class="form-group d-flex align-items-center">
+                    <input type="submit" class="form-control" value="SEND">
+                    <a href="#" class="btn-icon"><span class="fa fa-paper-plane"></span></a>
+                  </div>
+                </form>
+              </div> 
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ -->
+<!--  END	section 하단 banner 신청 폼 -->
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->    
+
+    <footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+<!-- SCRIPTS -->
+    <div th:insert="fragments/general.html :: jslibs"></div>    
+    
+  <script th:inline="javascript">
+    var newsPk = 1;
+	
+    $(document).ready(function () {
+        var newsPk = /*[[${news.newsPk}]]*/;;
+		if( newsPk == 1){
+	        let logowrap = document.querySelector('#logo-wrap');
+    	    if( logowrap != null ){
+        	    logowrap.classList.add('logo-wrap-white');
+        	}else{
+        		console.warn('logo warpper is not');
+        	}
+       	}else{
+    		console.warn('news id empty');       		
+       	}
+    });
+
+    // to send enrol
+    function sendEnrol(){
+      let formdata = new FormData(document.querySelector('#enrolForm'));
+      // // 폼 객체 key 와 value 값을 순회.
+      // let entries = formdata.entries();
+      // for (const pair of entries) {
+      //     console.log(pair[0]+ ': ' + pair[1]); 
+      // }
+      requestEnrol(formdata);
+
+      const form = document.querySelector('#enrolForm');
+      form.reset();
+      form.elements['enrolFor'].value = newsTitle;
+      return false;
+    }
+    function requestEnrol(data){
+      // fetch(DOMAIN+'/api/members/enrolment', {
+      //   method: 'POST',
+      //   cache: 'no-cache',
+      //   body: data // body 부분에 폼데이터 변수를 할당
+      // })
+      // .then((response) => response.json())
+      // .then((data) => {console.log(data);});
+
+      // $.ajax({
+      //   type : 'post',           // 타입 (get, post, put 등등)
+      //   url : DOMAIN+'/api/members/enrolment?'+param,           // 요청할 서버url
+      //   async : true,            // 비동기화 여부 (default : true)
+      //   // headers : {              // Http header
+      //   //   "Content-Type" : "application/json",
+      //   //   "X-HTTP-Method-Override" : "POST"
+      //   // },
+      //   dataType : 'json',       // 받을 테이터의 자료형 지정(html, xml, json, text 등등)
+      //   data : JSON.stringify(data),  // 보낼 데이터 (Object , String, Array)
+          // //추가해야 하는 부분
+          // beforeSend : function(xhr) {
+          //     xhr.setRequestHeader(header, token);
+          // },
+      //   success : function(result) { // 결과 성공 콜백함수
+      //     console.log(result);
+      //   },
+      //   error : function(request, status, error) { // 결과 에러 콜백함수
+      //       console.log(error)
+      //   }
+      // })
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+
+<body>
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+
+  	<section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('images/bg_4-1.jpg?v=2');">
+    	<div class="overlay"></div>
+    	<div class="container">
+      	<div class="row no-gutters slider-text align-items-center justify-content-center">
+        	<div class="col-md-9 pt-5 mt-5 text-center">
+          		<p class="breadcrumbs">
+	            	<span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+    	        	<span>About us <i class="fa fa-chevron-right"></i></span>
+          		</p>
+          		<h1 class="mb-0 bread ">GLOBAL ICT EDUCATION & SERVICE FLATFORM</h1>
+        	</div>
+      	</div>
+    	</div>
+  	</section>
+<!-- END	HEADER -->
+
+
+  <section class="ftco-section section-visson my-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="subheading main-title">VISION</h2>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <p class="text main-content">Become a leading organization in ICT education and the related technology
+            industry, expanding
+            from Vietnam to the entire ASEAN region.</p>
+          <p class="text main-content">We focus on providing high-quality training courses with content designed by top
+            experts and
+            applying methods and curricula from South Korea, one of the most advanced countries in information
+            technology.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="ftco-section section-mission my-3 ">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          <h2 class="subheading main-title">MISSIONS</h2>
+          <div class="row mt-4 g-lg-2">
+            <p class="mb-0 text main-content">
+              Training and developing high-quality human resources for the technology industry in Vietnam, we are
+              committed to providing students with high-quality courses, including in-depth courses and practical
+              vocational training programs, to meet the needs of businesses and organizations in recruiting highly
+              skilled employees who are ready to work in modern digital environments.
+            </p>
+            <p class="main-content">
+              We believe that with a team of experienced and professional teachers, advanced programs and effective
+              training methods, we will be a reliable training partner for businesses and students in the technology
+              field in Vietnam and ASEAN countries."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section-counter section-map"
+    style="background: url(images/bg_map.jpeg?v=3); background-position: center;">
+    <div class="container">
+      <div class="row" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        <div class="col-lg-12 map-logo">
+          <div id="mapedu" class="mapedu mainMenuOverlay">
+            <div class="circle">
+              <div class="itemMenuBox bills">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/BITCamp-logo.png" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox tarsheed">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/AIPalm_AIA-logo.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox employees">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/globepoint.png" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox location">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/Codepresso-logo-blue.png" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox eservices">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/SmartnPlay-logo.png" alt="">
+                </a>
+              </div>
+              <a href="javascript:void(0)" class="mainBox">
+                <img src="images/partner-logo/ATCollabo-logo.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="map-name text-center">EDUCATION</div>
+
+        </div>
+      </div>
+      <div class="row" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        <div class="col-lg-12 map-logo">
+          <div id="mapICT" class="mapICT mainMenuOverlay">
+            <div class="circle">
+              <div class="itemMenuBox bills">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/aipalm.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox tarsheed">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/ThePlayer-logo.png" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox employees">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/magnon_studio-logo.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox location">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/nanorex.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/rockwonit.png" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/BASESTONE_gray-logo.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/nsdevil.jpeg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/deepscent-logo.png" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/linkedkorea.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/ditus-logo.jpg" alt="">
+                </a>
+              </div>
+              <div class="itemMenuBox">
+                <a href="javascript:void(0)" target="_blank" class="itemMenu ">
+                  <img src="images/partner-logo/BA-logo-black.png" alt="">
+                </a>
+              </div>
+              <a href="javascript:void(0)" class="mainBox">
+                <img src="images/partner-logo/ATCollabo-logo.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="map-name text-center">ICT BUSINESS</div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+<!--
+  <section class="ftco-section partner-section bg-light">
+    <div class="container-xl">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="mb-5">PARTNERSHIP</h2>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-12 company-list">
+          <div class="company">
+            <img src="images/partner-logo/Codepresso-logo-blue.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/globepoint.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/SmartnPlay-logo.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/AIPalm_AIA-logo.jpg" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/ThePlayer-logo.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/Codepresso-logo-blue.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/deepscent-logo.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/nanorex.jpg" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/BASESTONE_gray-logo.jpg" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/rockwonit.png" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/nsdevil.jpeg" alt="">
+          </div>
+          <div class="company">
+            <img src="images/partner-logo/BA-logo-black.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+<!-- FOOTER -->    
+	<section th:insert="fragments/general.html :: footer-banner" id="foot-banner" class="ftco-intro py-5 bg-primary"></section>
+    <footer th:insert="fragments/general.html :: footer" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+<!-- SCRIPTS -->
+    <div th:insert="fragments/general.html :: jslibs"></div>
+
+
+</body>
+
+</html>

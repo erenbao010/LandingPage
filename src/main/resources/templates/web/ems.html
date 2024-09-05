@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="headerfiles">
+    <title>Management System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" content="/images/Thumnail.png">
+
+    <link rel="favicon" href="/favicon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/css/font.css?v=1">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/tiny-slider.css">
+    <link rel="stylesheet" href="/css/glightbox.min.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/style.css?v=1">
+    <link rel="stylesheet" href="/css/blog.css?v=2">
+    <link rel="stylesheet" href="/css/popup.css?v=1">
+    <link rel="stylesheet" href="/css/banner.css?v=1">
+    <link rel="stylesheet" href="/scss/custom.css?v=11">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+<header th:insert="fragments/general.html :: header" id="header" class="top-wrap"></header>
+<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+<section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('/images/bg_4-1.jpg?v=2');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs">
+                    <span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span><a th:href="@{/services}">Services <i class="fa fa-chevron-right"></i></a></span>
+                </p>
+                <h1 class="mb-0 bread text-uppercase"> MANAGEMENT SYSTEM</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row no-gutters justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div>
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <div class="container">
+                                <div class="pb-4">
+                                    <h1 style="text-align: center; font-weight: bold;">OUR SOLUTIONS</h1><br>
+                                </div>
+
+                                <div class="row">
+                                    <!-- Left Block - Image -->
+                                    <div class="col-md-4 col-sm-12 mb-4">
+                                        <img src="/images/emsContentImage.png" alt="Solution Image" class="img-fluid">
+                                    </div>
+
+                                    <!-- Right Block - List of 5 Detail Boxes -->
+                                    <div class="col-md-7 col-sm-12 offset-md-1"
+                                         style="max-height: 800px; overflow-y: auto;">
+                                        <div class="d-flex flex-column">
+                                            <!-- Box 1 -->
+                                            <div class="d-flex align-items-start mb-4">
+                                                <div class="mr-auto px-4">
+                                                    <img src="/images/emsIcon1.png" alt="Icon 1" class="box-icon">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <h5 style=" font-weight: 600;">Project Planning and Tracking</h5>
+                                                    <p class=" small ">Efficiently plan and monitor project progress
+                                                        through comprehensive project management tools, enabling
+                                                        seamless coordination, task scheduling, and real-time tracking
+                                                        of milestones.</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Box 2 -->
+                                            <div class="d-flex align-items-start mb-4">
+                                                <div class="mr-auto px-4">
+                                                    <img src="/images/emsIcon2.png" alt="Icon 2" class="box-icon">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <h5 style="font-weight: 600;">Resource Management</h5>
+                                                    <p class="small">Optimize resource allocation and utilization with
+                                                        robust tools that facilitate the planning, assignment, and
+                                                        monitoring of personnel, equipment, and other project assets for
+                                                        enhanced productivity and cost-effectiveness.</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Box 3 -->
+                                            <div class="d-flex align-items-start mb-4">
+                                                <div class="mr-auto ps-4 pe-3">
+                                                    <img src="/images/emsIcon3.png" alt="Icon 3" class="box-icon">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <h5 style=" font-weight: 600;">Document Management</h5>
+                                                    <p class="small">Streamline document organization and accessibility
+                                                        with a centralized system, promoting efficient creation,
+                                                        storage, retrieval, and sharing of project-related documents for
+                                                        improved collaboration and information flow.</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Box 4 -->
+                                            <div class="d-flex align-items-start mb-4">
+                                                <div class="mr-auto ps-4 pe-3">
+                                                    <img src="/images/emsIcon4.png" alt="Icon 4" class="box-icon">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <h5 style=" font-weight: 600;">Quality Management</h5>
+                                                    <p class="small">Ensure project deliverables meet predefined quality
+                                                        standards by implementing effective quality management features,
+                                                        including quality control measures, audits, and continuous
+                                                        improvement processes to enhance overall project outcomes.</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Box 5 -->
+                                            <div class="d-flex align-items-start mb-4">
+                                                <div class="mr-auto ps-4 pe-3">
+                                                    <img src="/images/emsIcon5.png" alt="Icon 5" class="box-icon">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <h5 style=" font-weight: 600;">Collaboration Tools</h5>
+                                                    <p class="small">Foster seamless communication and teamwork through
+                                                        integrated collaboration tools, offering features such as
+                                                        real-time messaging, file sharing, and collaborative editing,
+                                                        promoting efficient information exchange and collective
+                                                        decision-making among team members</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->
+<section th:insert="fragments/general.html :: footer-banner" id="foot-banner"
+         class="ftco-intro py-5 bg-primary"></section>
+<footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->
+
+<!-- SCRIPTS -->
+<div th:insert="fragments/general.html :: jslibs"></div>
+
+<script th:inline="javascript">
+
+
+</script>
+
+
+</body>
+</html>

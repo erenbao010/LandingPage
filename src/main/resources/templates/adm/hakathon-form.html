@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<title>TITLE</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link th:href="@{/admin/css/styles.css}" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<!-- summernote   -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    	<script th:src="@{/admin/summernote/0.8.18-dist/summernote-lite.js}"></script>
+    	<script th:src="@{/admin/summernote/0.8.18-dist/lang/summernote-ko-KR.js}"></script>
+	    <link th:href="@{/admin/summernote/0.8.18-dist/summernote-lite.css}" rel="stylesheet" >
+
+</head>
+<body>
+
+<header class="container-fluid">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">ATC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/admin}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/admin/blog}">News&Event</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hackathon
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/admin/hackathon/}">LIST</a></li>
+            <li><a class="dropdown-item" th:href="@{/admin/hackathon/put}">OPEN</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</header>
+	
+	<div class="container">
+		<form th:action="@{/admin/hackathon/post}" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>				
+			<div class="mb-3">
+				<label for="title" class="form-label">Title</label>
+				<input class="form-control form-control-sm" name="title" type="text" >
+			</div>
+			<div class="mb-3">
+				<label for="type" class="form-label">Type</label>
+				<input class="form-control form-control-sm" name="type" type="text" >
+			</div>
+			<div class="mb-3">
+				<label for="start" class="form-label">Start.date</label>
+				<input class="form-control form-control-sm" name="start" type="date" >
+			</div>
+			<div class="mb-3">
+				<label for="end" class="form-label">End.date</label>
+				<input class="form-control form-control-sm" name="end" type="date" >
+			</div>
+			<div class="mb-3">
+				<label for="summary" class="form-label">Summary</label>
+					<textarea id="content" name="summary"></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="images" class="form-label">Images (max 4)</label>
+				<input class="form-control form-control-sm" name="images" type="file" multiple>
+			</div>
+			<div class="mb-4">
+				<input type="submit" class="btn btn-primary" value="OPEN">				
+			</div>
+		</form>
+		
+	</div><!-- // container -->
+
+	<footer class="container-fluid">
+		<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]</h1>
+		<br>
+		<h1 th:inline="text">username: [[${username}]]</h1>
+	 
+		<!--SYSTEM 역할을 갖는다면 이 글이 보임-->
+		<h3 sec:authorize="hasRole('관리자')">Has '관리자' Role</h3>
+	 	 
+		<!--어떤 역할이건 상관없이 인증이 되었다면 이 글이 보임-->
+		<h3 sec:authorize="isAuthenticated()">Only Authenticated user can see this Text</h3>
+	 
+		<div>
+<!--  			Authorities : <span sec:authentication="principal.authorities"></span> -->
+ 		</div>
+		<br>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <!--  summernote -->
+	<script th:inline="javascript">
+			//	https://summernote.org/getting-started/#basic-api
+		    $('#content').summernote({
+		        height: 150,
+		        lang: "ko-KR",
+		        focus : true,
+		        toolbar: [
+		            ['fontname', ['fontname']],
+		            ['fontsize', ['fontsize']],
+		            ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+		            ['color', ['forecolor','color']],
+		            ['table', ['table']],
+		            ['para', ['ul', 'ol', 'paragraph']],
+		            ['height', ['height']],
+		            ['insert', ['link', 'picture', 'video']],
+		            ['view', ['codeview','fullscreen', 'help']]
+		        ],
+		        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
+		        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
+		        callbacks: {
+		        	onImageUpload: function(files){
+		        		// 실제 실행 함수 등록
+		        		uploadSummernoteImage(files[0], this)
+		        	}
+		        }
+		    });
+		    var header = /*[[${_csrf.headerName}]]*/;
+		    var token = /*[[${_csrf.token}]]*/;
+		    function uploadSummernoteImage(file, editor) {
+	            data = new FormData();
+	            data.append("file", file);
+	            console.log(data);
+
+	            $.ajax({
+	                data : data,
+	                type : "POST",
+	                url : "/api/uploadSummernoteImage",
+	                contentType : false,
+	                processData : false,
+	            	/*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+	            	beforeSend : function(xhr){
+	            		xhr.setRequestHeader(header, token);
+	            	},
+	                success : function(data) {
+	                    //항상 업로드된 파일의 url이 있어야 한다.
+	                    console.log(data[0]);
+	                    console.log(data[0].imageURL);
+	                    $(editor).summernote('insertImage', data[0].imageURL);
+	                }
+	            });
+	        }
+
+		</script>
+
+
+</body>
+</html>
+

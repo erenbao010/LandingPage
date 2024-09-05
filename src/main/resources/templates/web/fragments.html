@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- sample with Fragments in Thymeleaf 
+	if need new page, copy this file
+	-->
+<!-- include – this is deprecated but it may still appear in a legacy code 
+	th:insert는 th:insert가 작성된 태그 내부에 import하는 템플릿 조각을 추가한다.
+	반면에 th:replace는 th:replace가 작성된 태그를 삭제하고 템플릿 조각으로 대체 한다.
+-->
+
+</head>
+<body>
+    <header th:insert="fragments/general.html :: header"> </header>
+    <p>Go to the next page to see fragments in action</p>
+    <div th:replace="fragments/general.html :: footer"></div>
+</body>
+</html>
+

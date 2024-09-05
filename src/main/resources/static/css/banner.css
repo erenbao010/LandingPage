@@ -1,0 +1,44 @@
+
+section#banner {
+    height: 44vw;
+}
+#bannerContent{
+    position: absolute;
+	top: 68px;
+	left: 15vw;
+    width: 24vw;
+}
+#bannerThums {
+    width: 100%;
+}
+#bannerTitle{
+    font-size: 1.2em !important; 
+    padding: 12px;
+}
+section.ftco-section{
+    padding-top: 2vw;
+}
+
+@media(max-width:1024px){
+    #bannerContent{
+        display: none;
+    }
+}
+
+@media(max-width:1279px){
+	#bannerContent{
+	    width: 16vw;
+	}
+}
+
+@media(min-width: 1280px) and (max-width:1440px){
+	#bannerContent{
+	    width: 20vw;
+	}
+}
+
+@media(min-width:1441px) and (max-width:1600px){
+}
+
+@media(min-width:1601px) {
+}

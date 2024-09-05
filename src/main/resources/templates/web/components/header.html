@@ -1,0 +1,39 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md col-xl-5 d-flex align-items-center" >
+      <div id="logo-wrap" style="width: 192px; padding: 6px;">
+        <a class="navbar-brand align-items-center" th:href="@{/index}">
+          <img th:src="@{/images/logo.png}" alt="">
+        </a>  
+      </div>
+    </div>
+    <div class="col-md d-flex align-items-center">
+
+    </div>
+    <div class="col-md d-flex align-items-center">
+      <div class="con d-flex">
+        <div class="icon"><span class="flaticon-clock"></span></div>
+        <div class="text">
+          <span>[[${site.siteWorkday}]]</span>
+          <strong>[[${site.siteWorktime}]]</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md d-flex justify-content-end align-items-center">
+      <div class="con d-flex">
+        <div class="icon"><span class="flaticon-telephone"></span></div>
+        <div class="text">
+          <span>Call Us</span>
+          <strong>[[${site.sitePhone}]]</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+		<div id="google_translate_element" class="hd_lang"></div>
+
+</html>

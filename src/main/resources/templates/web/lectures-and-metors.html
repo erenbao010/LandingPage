@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+
+  <section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('images/bg_4-1.jpg?v=2');">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 pt-5 mt-5 text-center">
+          <p class="breadcrumbs">
+            <span class="me-2"><a href="/index">Home <i class="fa fa-chevron-right"></i></a></span>
+            <span>Team <i class="fa fa-chevron-right"></i></span>
+          </p>
+          <h1 class="mb-0 bread ">LECTURERS & MENTORS</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+
+  <!-- START SECTION LECTURERS -->
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+          <h2 class="mb-5">LECTURERS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/1.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span>1</a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Kang Yocheon</h3>
+              <ul class="meta">
+                <li>20 years of practical experience</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>AiA Academy Java, Spring, Spring Boot, Web ('20~'22)</li>
+                <li>IoT Course, Korea Institute of Production Technology, Python, Java, Web ('19)</li>
+                <li>Mentor for Seoul City App Competition ('18)</li>
+                <li>Open SW Developer Association competition mentor and advisory board member ('17-'21)</li>
+                <li>Publications (8 books): Java Web Development Workbook by Freelec, Spring Boot to Learn with Code by
+                  Namgaram Books, Spring Web Project to Learn with Code (Revised Edition) by Namgaram Books, etc.</li>
+              </ul>
+
+              <!-- <span class="position">Developer and Lead Instructor</span> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/2.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Eom Jinyoung</h3>
+              <ul class="meta">
+                <li>20 years of practical experience</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>Lecturer at Hyundai Information Technology ('01~'06)</li>
+                <li>Freelancer at Infonia Corporation ('07~'08)</li>
+                <li>Development Researcher at JN Meditech ('08~'09)</li>
+                <li>Software Development Researcher at IDS&amp;Trust ('09~'10)</li>
+                <li>Software development at UWISEONE ('11~'12)</li>
+                <li>BitComputer BitCamp Lecturer ('12~'21)</li>
+              </ul>
+
+              <!-- <span class="position">Developer and Lead Instructor</span> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/3.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Moon Sanghwan</h3>
+              <ul class="meta">
+                <li>21 years of practical experience (communication module, various solutions, security)</li>
+                <li>Information Processing Industry Engineer, Information Security Industry Engineer</li>
+                <li>7 years as a full-time instructor at BitCamp</li>
+                <li>Specialized lecturer in Metaverse (AR/VR) field</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/4.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Kim Youngjin</h3>
+              <ul class="meta">
+                <li>21 years of practical experience</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>Lecturer at S.I.S.T. ('02~07)</li>
+                <li>BitCamp ('07~'21)</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/5.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Yoon Youngsun</h3>
+              <ul class="meta">
+                <li>21 years of experience</li>
+                <li>Master in Artificial Intelligence</li>
+                <li>Lecturer specializing in AI</li>
+                <li>(Deep Learning, Machine Learning, TensorFlow, Keras, etc.)</li>
+                <li>Patent holder in artificial intelligence</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/6.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Lee Moonhee</h3>
+              <ul class="meta">
+                <li>18 years of practical experience</li>
+                <li>BitCamp Lectures ('20.9~Present)</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>Lecturer, Korea ICT Convergence Business Cooperative ('16.8~'18.10)</li>
+                <li>Lecturer, Gangneung Wonju University Continuing Education Center ('15.3~'16.3)</li>
+                <li>Lecturer, Korea Evangelization Association ('14.7~'14.10)</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/6.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Park Jeonggwan</h3>
+              <ul class="meta">
+                <li>15 years of practical experience</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>MGML SI development and operation team ('07~'10/'12~'13)</li>
+                <li>White Wing Software Development ('13~'14)</li>
+                <li>Lecturer at Hi-Media Computer Academy ('14~'15)</li>
+                <li>Lecturer at Hanbite Education Center ('15~'17)</li>
+                <li>Lectured at BitCamp ('17~'21)</li>
+              </ul>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/6.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Oh Yeon-eui</h3>
+              <ul class="meta">
+                <li>15 years of practical experience</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>Program Development Researcher at Hyundai Data Systems ('93.1~'93.6)</li>
+                <li>Lecturer at Nam Seoul Computer Institute ('93.11~'94.6)</li>
+                <li>Lecturer at ITBANK Multicampus Academy ('08~'15)</li>
+                <li>Lectured at Cage Haiti Bank ('08~'19)</li>
+                <li>Lectured at BitCamp ('18~'23)</li>
+              </ul>
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/lecturers/6.jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Go Gicheon</h3>
+              <ul class="meta">
+                <li>7 years of practical experience</li>
+                <li>K-Digital Training Leading Company Academy (NAVER CLOUD Certified Instructor) (~Present)</li>
+                <li>HYNIX SW Development ('16~'17)</li>
+                <li>SW Development at ISEI ('17~'21)</li>
+                <li>BitCamp Lecture ('21~'22)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END SECTION MENTORS -->
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+          <h2 class="mb-5">MENTORS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/Hwang.jpg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Hwang Dae Hwan (Michael)</h3>
+              <ul class="meta">
+                <li>30 years of industry experience</li>
+                <li>Master of Engineering, Korea University</li>
+                <li>CISA(Certified Information Systems Auditor)</li>
+                <li>CSM(Certified ScrumMaster)</li>
+                <li>Adjunct professor at a Korean university</li>
+                <li>Evangelist Specializing in the Latest Information Technology Innovations
+                <li>MS MVP award winner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/KimJungHyu.jpg);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Kim Jung Hyun (Ryan)</h3>
+              <ul class="meta">
+                <li>30 years of industry experience</li>
+                <li>MEDIA PLATFORM DEVELOPEMENT TEAM LEADER AT SK BROADBAND</li>
+                <li>KOREA'S LEADING IPTV & OTT  PLATFORM ARCHITECT</li>
+                <li>Technical architect for handling over a million concurrent users</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/jang.jpg);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Jang Dae Kyung (Mario)</h3>
+              <ul class="meta">
+                <li>15 years of industry experience</li>
+                <li>Software Development Specialist (E-commerce, Corporate Intranet and ERP, Education LMS and CMS)</li>
+                <li>Software Professional Developer Training (Instructor)</li>
+                <li>Teaching Software (Korea Institute for Education Certificates)</li>
+                <li>Industrial Engineer Information Processing (Human Resources Development service of Korea)</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+         <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/Globepoint.jpg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Raymond Cho</h3>
+              <ul class="meta">
+                <li>Globepoint CEO</li>
+                <li>Director at Korea Edutech Industry Association</li>
+                <li>Seoul National University FIP Advanced Management Program</li>
+                <li>Major in technology management at Nanyang Technological University Graduate School in Singapore (master)</li>
+                <li>Major in MIS at Hanyang University Graduate School of Business Administration (master)</li>
+                <li>Major in computer engineering at Soongsil University (bachelor)</li>
+                <li>University of Washington UW-NTU Technology Entrepreneurship (NTU)</li>
+                <li>Stanford University Design thinking course (NIPA)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->    
+	<section th:insert="fragments/general.html :: footer-banner" id="foot-banner" class="ftco-intro py-5 bg-primary"></section>
+    <footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+<!-- SCRIPTS -->
+    <div th:insert="fragments/general.html :: jslibs"></div>    
+
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="headerfiles">
+    <!-- copied from fragments.html --><title>AI For Officer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" th:content="@{/images/Thumnail.png}">
+
+    <link rel="favicon" th:href="@{/favicon/favicon.ico}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
+
+    <!-- see /fonts/ roboto, merriweather, montserrat already have -->
+    <link rel="stylesheet" th:href="@{/css/font.css?v=1}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/tiny-slider.css}">
+    <link rel="stylesheet" th:href="@{/css/glightbox.min.css}">
+    <link rel="stylesheet" th:href="@{/css/aos.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/blog.css?v=2}">
+    <link rel="stylesheet" th:href="@{/css/popup.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/banner.css?v=1}">
+    <link rel="stylesheet" th:href="@{/scss/custom.css?v=11}">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+<header th:insert="fragments/general.html :: header" id="header" class="top-wrap"></header>
+<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+<section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('images/bg_4-1.jpg?v=2');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs">
+                    <span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span><a th:href="@{/courses}">Courses <i class="fa fa-chevron-right"></i></a></span>
+                </p>
+                <h1 class="mb-0 bread ">AI for officer</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row no-gutters justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div>
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <div class="container">
+                                <h1 style="text-align:center;">AI for office worker - nhân đôi hiệu suất với AI
+
+                                </h1><br>
+                                <h5>I. Mục tiêu khóa học
+
+                                </h5>
+                                <p>
+                                    Thời đại tiệm cận 5.0, khả năng năng áp dụng Trí tuệ nhân tạo (AI) vào công việc và
+                                    cuộc sống sẽ trở thành kỹ năng thiết yếu. Có thể nói, AI có thể trở thành xu hướng
+                                    của tương lai, vì vậy việc bắt kịp xu thế sẽ là một bước quan trọng để phát triển
+                                    trên con đường sự nghiệp của bạn.
+                                </p>
+
+                                <h5>II. Đối tượng tham gia</h5>
+                                <ul>
+                                    <li>Người đi làm muốn áp dụng AI vào giải quyết công việc để cải thiện hiệu suất
+                                        công việc.
+                                    </li>
+                                    <li>Sinh viên đang theo học Công nghệ Thông tin, muốn cải thiện hiệu suất học tập và
+                                        thực hiện các dự án có tính ứng dụng cao.
+                                    </li>
+                                    <li>Lập trình viên tìm kiếm cơ hội nâng cao hiệu suất công việc, muốn tham gia trực
+                                        tiếp vào phát triển dự án với sự hỗ trợ mạnh mẽ từ AI.
+                                    </li>
+                                    <li>Ứng viên muốn tạo ấn tượng với nhà tuyển dụng bằng khả năng tiếp cận và ứng dụng
+                                        linh hoạt các xu hướng công nghệ mới.
+                                    </li>
+                                </ul>
+<!--                                <div>-->
+<!--                                    <img alt="" class="img-fluid  img-fullwidth"-->
+<!--                                         src="/images/courses/offline/ai-page.jpg"> <br>-->
+<!--                                </div><br>-->
+                                <h5>III. Đến với Workshop bạn sẽ nhận được gì?
+                                </h5>
+                                <ul>
+                                    <li>Hiểu rõ về cách hoạt động AI để nâng cao hiệu suất lập trình</li>
+                                    <li> Ứng dụng AI để giải quyết các vấn đề thực tế</li>
+                                    <li>Áp dụng AI để tối ưu hóa quy trình làm việc và nâng cao hiệu suất</li>
+                                    <li>Tìm hiểu tương lai AI và định hướng phát triển nghề nghiệp trong ngành công nghệ
+                                        thông tin
+                                    </li>
+                                </ul>
+                                <p>
+                                    Liên hệ ngay với ATCollabo Academy để nhận lịch khai giảng mới nhất nhé.
+                                </p>
+                                <div class="wrapper-iframe" id="register-form">
+                                    <iframe class="iframe-form" aria-label='Đăng ký thông tin tư vấn khóa học' frameborder="0"
+                                            style="height:95rem;width:99%;border:none;overflow: auto;"
+                                            src='https://forms.zohopublic.com/atcollabo/form/ngkkhahc/formperma/gQswzUWCp9AVo1cnp_LJJ7JWKshhCTkEsJrIChl5TVE'></iframe>
+                                </div>
+                                <p>Nếu bạn có bất kỳ thắc mắc gì về khóa học hãy liên hệ với ATCollabo Academy để được
+                                    giải đáp nhanh chóng nhé</p>
+                                <p><strong>ATCollabo Academy</strong></p>
+                                <p><strong>Smart Challenge, Education starts with excitement</strong></p>
+                                <p><strong>Add:3F, Paxsky building, 26 Ung Van Khiem, 25 Ward, Binh Thanh dist, HCMC</strong> </p>
+                                <p><strong>Hotline: 0867-399-188</strong></p>
+                                <p><strong>Email:recruitment@atcollabo.com</strong> </p>
+                                <p><strong>Website:https://atcollabo.com/</strong></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->
+<section th:insert="fragments/general.html :: footer-banner" id="foot-banner"
+         class="ftco-intro py-5 bg-primary"></section>
+<footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->
+
+<!-- SCRIPTS -->
+<div th:insert="fragments/general.html :: jslibs"></div>
+
+<script th:inline="javascript">
+
+
+</script>
+
+
+</body>
+
+</html>

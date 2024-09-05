@@ -1,0 +1,28 @@
+
+/* fonts 
+	url('fonts/NanumGothic.eot?#iefix') format(‘embedded-opentype’),
+    url('fonts/NanumGothic.woff') format(‘woff’),
+    url('fonts/NanumGothic.ttf') format('truetype'),
+    url('fonts/NanumGothic.svg') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+*/
+@font-face {
+    font-family: 'Merriweather-Regular';
+    src: url('/fonts/merriweather/Merriweather-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Merriweather';
+    src: url('/fonts/merriweather/Merriweather-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+/*     font-style: normal; */
+/*     font-weight: normal; */
+}

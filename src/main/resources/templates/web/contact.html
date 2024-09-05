@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+  	<section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('images/bg_4-1.jpg?v=2');">
+    	<div class="overlay"></div>
+    	<div class="container">
+	      	<div class="row no-gutters slider-text align-items-center justify-content-center">
+	        	<div class="col-md-9 pt-5 mt-5 text-center">
+	          	<p class="breadcrumbs">
+	            	<span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+	            	<span>Contact us <i class="fa fa-chevron-right"></i></span>
+	          	</p>
+	          	<h1 class="mb-0 bread ">CONTACT US</h1>
+	        	</div>
+	      	</div>
+    	</div>
+  	</section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+  <section class="ftco-section bg-light">
+    <div class="container">
+      <div class="row no-gutters justify-content-center">
+        <div class="col-md-12">
+          <div class="wrapper">
+            <div class="row g-0">
+              <div class="col-lg-6 order-lg-last">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <h3>Contact us</h3>
+                  <p class="mb-4">We're open for any suggestion or just to have a chat</p>
+                  <div class="row mb-4">
+                    <div class="col-md-4">
+                      <div class="dbox w-100 d-flex align-items-start">
+                        <div class="text">
+                          <p><span>Address:</span> 
+                          <!-- 3F, Paxsky building, 26 Ung Van Khiem, 25 ward, Bình Thạnh dist, HCMC -->
+                          	[[${site.siteAddress}]]
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dbox w-100 d-flex align-items-start">
+                        <div class="text">
+                          <p><span>Email:</span> <a th:href="|mailto:${site.siteEmail1}|">[[${site.siteEmail1}]]</a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dbox w-100 d-flex align-items-start">
+                        <div class="text">
+                          <p><span>Phone:</span> <a th:href="|tel://${site.sitePhone}|">[[${site.sitePhone}]]</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- FORM -->
+                  <form id="contactForm" name="contactForm" class="contactForm" onsubmit="return sendEnrol();">
+                  	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Create a message here" required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="submit" value="Send Message" class="btn btn-primary">
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- //	FORM -->
+                  
+                  <div class="w-100 social-media mt-5">
+                    <h3>Follow us here</h3>
+                    <p>
+                      <a href="#">Facebook</a>
+                      <a href="#">Twitter</a>
+                      <a href="#">Instagram</a>
+                      <a href="#">Dribbble</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-stretch">
+                <div id="map" class="bg-white">
+                  <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJT6lI0sUpdTER_fUDf2EWb6M&key=AIzaSyDlXSeuG4W9pUy-GnvWdZvJnuJpdjUxHpQ">
+                  </iframe>
+                  <!-- src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDlXSeuG4W9pUy-GnvWdZvJnuJpdjUxHpQ&q=Space+Needle,Seattle+WA">
+                  </iframe> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->    
+	<section th:insert="fragments/general.html :: footer-banner" id="foot-banner" class="ftco-intro py-5 bg-primary"></section>
+    <footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+<!-- SCRIPTS -->
+    <div th:insert="fragments/general.html :: jslibs"></div>    
+
+  	<script th:inline="javascript">
+    
+    $(document).ready(function () {
+    });
+
+    // to send enrol
+    function sendEnrol(){
+    	let state = 0;
+    	const formdata = new FormData(document.querySelector('#contactForm'));      	
+        // 폼 객체 key 와 value 값을 순회.
+  /*
+  		let entries = formdata.entries();
+        	for (const pair of entries) {
+          	console.log(pair[0]+ ': ' + pair[1]); 
+        	}
+   */
+      	if(checkInputText(formdata.get("name")) == false){
+      		alert("Invaild input text");
+            return false;
+      	}
+      	if(checkInputText(formdata.get("subject")) == false){
+      		alert("Invaild input text");
+            return false;
+      	}
+      	if(checkInputText(formdata.get("message")) == false){
+      		alert("Invaild input text");
+            return false;
+      	}
+      	
+      	try{
+			requestEnrol(formdata);
+      	}catch(e){
+			console.error(e);      		
+      	}
+      	const form = document.querySelector('#contactForm');
+      	form.reset();
+      	return false;
+    }
+    const DOMAIN = '';
+    function requestEnrol(data){
+      	fetch(DOMAIN+'/api/contact/post', {
+         	method: 'POST',
+         	cache: 'no-cache',
+         	body: data // body 부분에 폼데이터 변수를 할당
+      	})
+      	.then((response) => {
+      		const respJson = response.json();
+    	  	console.log('then response ', response);
+    	  	return respJson;
+      	})
+      	.then((data) => {
+    	  	console.log('then data: ', data);
+		});
+
+    }
+
+	</script>
+
+
+</body>
+
+</html>

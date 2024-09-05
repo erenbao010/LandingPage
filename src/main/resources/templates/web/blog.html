@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+    <!-- hero-wrap-2 -->
+    <section id="banner"
+      class="hero-wrap background-section "  style="background-image: url('/images/1519x700Background.png'); background-position: center;">
+      <!-- <div class="overlay"></div> -->
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center">
+
+            <div  id="bannerContent" class="col-lg-5">
+              <div class="text mt-5 pt-5" style="font-family: 'Montserrat', sans-serif;" data-aos="fade-up-right" data-aos-delay="300" data-aos-duration="1000">
+                <span class="subheading" style="font-size: 20px;"><!--Welcome to ATCollabo--></span>
+               	<a th:href="@{|/blog/${#strings.replace(recent.newsTitle,' ','_')}|}">
+                <div style="border-radius: 28px; overflow: hidden; background-color: rgba(240, 248, 255, 0.2);">
+	               		<img id="bannerThums" th:src="@{|/api/image?fileName=${recent.newsThums}|}" alt="">
+                  	<h1 id="bannerTitle" class="mb-4">[[${recent.newsTitle}]]</h1>  
+                </div>
+               	</a>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+  <!-- original 
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpeg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 pt-5 mt-5 text-center">
+            <p class="breadcrumbs"><span class="me-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Blog <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Our Stories</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+
+    <section class="ftco-section">
+      <div class="container-xl">
+        <div id="cardWrap" class="row justify-content-center">
+          <!--  card post -->
+          <th:block th:each="post: ${newsList}">
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="blog-entry justify-content-end" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="100">
+				<a th:href="@{|/blog/${#strings.replace(recent.newsTitle,' ','_')}|}">
+	            	<div class="block-20 img" th:style="'background-image: url('+@{/api/image(fileName=${post.newsThums})}+');'">
+    	        	</div>
+       			</a>
+              <div class="text">
+                <p class="meta">
+                	<span><i class="fa fa-user me-1"></i>Admin</span> 
+                	<span><i class="fa fa-calendar me-1"></i>[[${#temporals.format(post.dateCreate, 'MMM-dd,yyyy')}]]</span> 
+                	<span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span>
+                </p>
+                <h3 class="heading mb-3"><a th:href="@{|/blog/${#strings.replace(post.newsTitle,' ','_')}|}">[[${post.newsTitle}]]</a></h3>
+                <p>
+                	[[${post.newsSummary}]]
+                </p>
+              </div>
+            </div>
+          </div>
+          </th:block>
+          <!--  END card post -->
+        </div>
+
+        <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <!-- <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </section>  
+
+    <section class="ftco-intro py-5 bg-primary">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10">
+            <div class="row g-lg-5">
+              <div class="col-md-7 text-lg-right">
+                <h2 class="mb-0">Newsletter - Stay tune and get the latest update</h2>
+                <p>Far far away, behind the word mountains</p>
+              </div>
+              <div class="col-md-5 border-left d-flex align-items-center">
+                <form action="#" class="subscribe-form">
+                  <div class="form-group d-flex align-items-center">
+                    <input type="text" class="form-control" placeholder="Enter email address">
+                    <a href="#" class="btn-icon"><span class="fa fa-paper-plane"></span></a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->    
+
+    <footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+<!-- SCRIPTS -->
+    <div th:insert="fragments/general.html :: jslibs"></div>    
+
+<script type="text/javascript">
+  const DOMAIN = '';
+  // const urlParams = new URLSearchParams(window.location.search);
+  // const newsPk = urlParams.get('id');
+//  requestBannerData();
+//  requestData();
+
+  function requestBannerData(){
+    $.ajax({
+        type : 'get',           // 타입 (get, post, put 등등)
+        url : DOMAIN+'/api/news-events/recent',           // 요청할 서버url
+        async : true,            // 비동기화 여부 (default : true)
+        headers : {              // Http header
+          "Content-Type" : "application/json",
+          // "X-HTTP-Method-Override" : "POST"
+        },
+        dataType : 'json',       // 받을 테이터의 자료형 지정(html, xml, json, text 등등)
+        // data : JSON.stringify({  // 보낼 데이터 (Object , String, Array)
+        //   "no" : no,
+        //   "name" : name,
+        //   "nick" : nick
+        // }),
+        success : function(result) { // 결과 성공 콜백함수
+          changeBanner(result);
+        },
+        error : function(request, status, error) { // 결과 에러 콜백함수
+            console.log(error)
+        }
+      })
+    }
+    function changeBanner(data){
+      // dont change background image
+      const banner = document.querySelector("section#banner");
+      // banner.addEventListener('click', ()=>{
+      //   window.location.href= 'blog-single.html?id='+data.newsPk;
+      // });
+
+      const bannerThums = document.querySelector("#bannerThums");
+      bannerThums.src = DOMAIN+'/api/image?fileName='+data.newsThums;
+
+      const bannerTitle = document.querySelector("#bannerTitle");
+      const title = data.newsTitle;
+      // bannerTitle.innerHTML = '<a href="'+data.newsUrl+'">'+data.newsTitle+'</a>';
+      bannerTitle.innerHTML = '<a href="blog-single.html?id='+data.newsPk+'">'+title+'</a>';
+      // const bannerSummary = document.querySelector("#bannerSummary");
+      // bannerSummary.innerText = data.newsSummary;
+      
+    }
+
+    function requestData(){
+    $.ajax({
+        type : 'get',           // 타입 (get, post, put 등등)
+        url : DOMAIN+'/api/news-events',           // 요청할 서버url
+        async : true,            // 비동기화 여부 (default : true)
+        headers : {              // Http header
+          "Content-Type" : "application/json",
+          // "X-HTTP-Method-Override" : "POST"
+        },
+        dataType : 'json',       // 받을 테이터의 자료형 지정(html, xml, json, text 등등)
+        // data : JSON.stringify({  // 보낼 데이터 (Object , String, Array)
+        //   "no" : no,
+        //   "name" : name,
+        //   "nick" : nick
+        // }),
+        success : function(result) { // 결과 성공 콜백함수
+          changePage(result);
+        },
+        error : function(request, status, error) { // 결과 에러 콜백함수
+            console.log(error)
+        }
+      })
+    }
+
+    function changePage(data){
+      const wrapper = document.querySelector('#cardWrap');
+      data.forEach(element => {
+        const card = createCardPost(element);
+        wrapper.appendChild(card);
+      });
+    }
+    function createCardPost(data){
+      const col = document.createElement('div');
+      col.classList.add('col-md-6');
+      col.classList.add('col-lg-4');
+      col.classList.add('d-flex');
+
+      const entry = document.createElement('div');
+      entry.classList.add('blog-entry');
+      entry.classList.add('justify-content-end');
+      // entry.setAttribute('data-aos-delay','100');
+      // entry.setAttribute('data-aos-duration','1000');
+      // entry.setAttribute('data-aos','flip-right');
+
+      const anchor1 = document.createElement('a');
+      anchor1.setAttribute('href','blog-single.html?id='+data.newsPk);
+      anchor1.classList.add('block-20');
+      anchor1.classList.add('img');
+      anchor1.style.backgroundImage = "url('"+DOMAIN+"/api/image?fileName="+data.newsThums+"')";
+      anchor1.style.backgroundSize = "94%";
+
+      const text = document.createElement('div');
+      text.classList.add('text');
+
+      const meta = document.createElement('p');
+      meta.classList.add('meta');
+
+      const span1 = document.createElement('span');
+      const icon1 = document.createElement('i');
+      icon1.classList.add('fa');
+      icon1.classList.add('fa-user');
+      icon1.classList.add('me-1');
+      icon1.innerText=' ATC';
+
+      const span2 = document.createElement('span');
+      const icon2 = document.createElement('i');
+      icon2.classList.add('fa');
+      icon2.classList.add('fa-calendar');
+      icon2.classList.add('me-1');
+      icon2.innerText='  '+data.dateCreate.substring(0,10);
+
+      const span3 = document.createElement('span');
+      const icon3 = document.createElement('i');
+      const anchor2 = document.createElement('a');
+      anchor2.setAttribute('href','#');
+      icon3.classList.add('fa');
+      icon3.classList.add('fa-comment');
+      icon3.classList.add('me-1');
+      icon3.innerText='1';
+
+      const h3 = document.createElement('h3');
+      h3.classList.add('heading');
+      h3.classList.add('mb-3');
+      const anchor3 = document.createElement('a');
+      anchor3.setAttribute('href','blog-single.html?id='+data.newsPk);
+      anchor3.innerText=data.newsTitle;
+
+      const summary = document.createElement('p');
+      summary.innerText=data.newsSummary;
+
+      span1.appendChild(icon1);
+      span2.appendChild(icon2);
+      anchor2.appendChild(icon3);
+      span3.appendChild(anchor2);
+      meta.appendChild(span1);
+      meta.appendChild(span2);
+      meta.appendChild(span3);
+      text.appendChild(meta);
+      h3.appendChild(anchor3);
+      text.appendChild(h3);
+      text.appendChild(summary);
+      entry.appendChild(anchor1);
+      entry.appendChild(text);
+      col.appendChild(entry);
+      return col;
+    }
+</script>
+
+
+  </body>
+</html>

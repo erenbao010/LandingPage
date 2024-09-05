@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+
+<body>
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+	<section id="banner" 
+    	class="hero-wrap background-section"
+    	style="background-image: url('images/bg_1-1.jpeg?v=9'); background-position: center;">
+    	<div class="overlay"></div>
+    	<div class="container">
+      	<div class="row no-gutters slider-text align-items-center">
+        	<div class="col-lg-5">
+          		<div class="text mt-5 pt-5" style="font-family: 'Montserrat', sans-serif;" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            		<span class="subheading" style="font-size: 20px;">Welcome to ATCollabo</span>
+            		<h1 id="bannerTitle"
+              			class="mb-4" style="font-size: 55px !important;">Smart Challenge, Education starts with excitement</h1>
+            		<p id="bannerSummary" 
+              			class="mb-4" style="font-size: 20px;">
+              			Professional operator of IT experiential education<br>
+              			IT education experience to learn
+              			while having fun.
+            		</p>
+          		</div>
+        	</div>
+      	</div>
+    	</div>
+  	</section>
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->    
+	<section th:insert="fragments/general.html :: footer-banner" id="foot-banner" class="ftco-intro py-5 bg-primary"></section>
+    <footer th:insert="fragments/general.html :: footer" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+
+
+</body>
+
+</html>

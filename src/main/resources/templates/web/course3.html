@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="headerfiles">
+    <!-- copied from fragments.html --><title>Fullstack Developer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" th:content="@{/images/Thumnail.png}">
+
+    <link rel="favicon" th:href="@{/favicon/favicon.ico}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
+
+    <!-- see /fonts/ roboto, merriweather, montserrat already have -->
+    <link rel="stylesheet" th:href="@{/css/font.css?v=1}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/tiny-slider.css}">
+    <link rel="stylesheet" th:href="@{/css/glightbox.min.css}">
+    <link rel="stylesheet" th:href="@{/css/aos.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/blog.css?v=2}">
+    <link rel="stylesheet" th:href="@{/css/popup.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/banner.css?v=1}">
+    <link rel="stylesheet" th:href="@{/scss/custom.css?v=11}">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+<header th:insert="fragments/general.html :: header" id="header" class="top-wrap"></header>
+<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+<section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('images/bg_4-1.jpg?v=2');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs">
+                    <span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span><a th:href="@{/courses}">Courses <i class="fa fa-chevron-right"></i></a></span>
+                </p>
+                <h1 class="mb-0 bread ">FULL-STACK DEVELOPER</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row no-gutters justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div>
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <div class="container">
+                                <h1 style="text-align:center;">Lập trình viên Full-Stack </h1><br>
+                                <h5>I. Mục tiêu khóa học</h5>
+                                <p>
+                                    JavaScript là ngôn ngữ lập trình phổ biến nhất trên thế giới tính đến năm 2023,
+                                    ATCollabo Academy đặt mục tiêu đào tạo những lập trình viên nắm vững những kiến thức
+                                    lập trình Back-End ứng dụng MongoDB và Express dựa trên Node.js và React - những
+                                    ngôn ngữ lập trình được sử dụng rộng rãi trong lập trình Front-End.
+                                    Sau khi hoàn thành khóa học, học viên được trang bị những kỹ năng và kiến thức cần
+                                    thiết để có thể
+                                    ứng tuyển vào vị trí công việc Full-Stack Developer, nơi họ có thể tham gia vào việc
+                                    phát triển các dự án tiềm năng và có mức thu nhập “khủng”.
+
+
+                                </p>
+
+                                <h5>II. Đối tượng tham gia</h5>
+                                <p>
+                                    Những người đã có kiến thức cơ bản về IT và S/W.
+                                </p>
+
+
+                                <h5>III. Hình thức đào tạo</h5>
+                                <p>
+                                    Hình thức: Trực tiếp
+                                </p>
+                                <p>
+                                    Thời gian đào tạo: 8 giờ/ngày trong 3 tháng HOẶC 4 giờ/ngày trong 6 tháng.
+                                </p>
+                                <div>
+                                    <img alt="" class="img-fluid  img-fullwidth"
+                                         src="/images/courses/offline/dev-fullstack-page.jpg"> <br>
+                                </div><br>
+                                <h5>IV. Chương trình đào tạo</h5>
+                                <h5>Tháng thứ nhất: Lập trình MERN Stack cơ bản và trung cấp</h5>
+                                <p>
+                                    <strong>Tuần 1 và Tuần 2: Front-End Cơ bản (React)</strong>
+                                </p>
+                                <ul>
+                                    <li>HTML, CSS: Cấu trúc và Kiểu dáng của Web Page</li>
+                                    <li>JavaScript (ES6+): Các cú pháp và Khái niệm cơ bản</li>
+                                    <li>React: Thành phần (Component), Quản lý trạng thái, Định tuyến, Xử lý sự kiện
+                                        (Event)
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    <strong>Tuần 3 và Tuần 4: Back-End Cơ bản (Node.js & Express.js)</strong>
+                                </p>
+                                <ul>
+                                    <li>Node.js: Cú pháp cơ bản, Lập trình bất đồng bộ, Hệ thống Module</li>
+                                    <li>Express.js: Định tuyến, Phần mềm trung gian, Xử lý lỗi (Error)</li>
+                                    <li>Tìm hiểu về thiết kế và triển khai RESTful API</li>
+                                </ul>
+
+                                <h5>Tháng thứ hai: Quản lý cơ sở dữ liệu & Lập trình MERN Stack trung cấp và nâng
+                                    cao</h5>
+                                <p>
+                                    <strong>Tuần 1 và Tuần 2: React trung cấp và nâng cao</strong>
+                                </p>
+                                <ul>
+                                    <li>Thư viện quản lý trạng thái (Ví dụ: Redux): Tìm hiểu về tầm quan trọng của quản
+                                        lý trạng thái và thực hành
+                                    </li>
+                                    <li>Định tuyến React, Context API, Hook</li>
+                                </ul>
+
+                                <p>
+                                    <strong>Tuần 3 và Tuần 4: Cơ sở dữ liệu và Back-End nâng cao (MongoDB &
+                                        Express.js)</strong>
+                                </p>
+                                <ul>
+                                    <li>Thiết kế lược đồ, Ma trận CRUD, Lập chỉ mục (Indexing), Tổng hợp</li>
+                                    <li>Xác thực và Ủy quyền: Triển khai chức năng xác thực và ủy quyền ứng dụng
+                                        Passport.js
+                                    </li>
+                                    <li>Triển khai và giám sát: Triển khai và giám sát thông qua Dịch vụ đám mây (Ví dụ:
+                                        AWS, Azure, hay Google Cloud, Xây dựng quy trình CI/CD)
+                                    </li>
+                                </ul>
+
+                                <h5>Tháng thứ ba: Tìm hiểu về các dự án thực tế và Full-Stack Framework</h5>
+                                <p>
+                                    <strong>Từ tuần 1 đến tuần 4: Dự án thực tế</strong>
+                                </p>
+                                <ul>
+                                    <li>Lập kế hoạch: Xác định yêu cầu dự án, Ghi nhận yêu cầu người dùng, Tạo Mockup và
+                                        Wireframe
+                                    </li>
+                                    <li>Lập trình: Lập trình Front-End và Back-End ứng dụng MERN Stack, Xây dựng cơ sở
+                                        dữ liệu
+                                    </li>
+                                    <li>Kiểm thử: Thực hiện Kiểm thử mức đơn vị, Kiểm thử tích hợp và Kiểm thử người
+                                        dùng
+                                    </li>
+                                    <li>Triển khai: Triển khai bằng cách sử dụng nền tảng đám mây (Ví dụ: AWS, Azure,
+                                        hay Google Cloud, Xây dựng quy trình CI/CD)
+                                    </li>
+                                    <li>Đánh giá và liên tục cải tiến: Đánh giá code, Sửa lỗi, Tối ưu hóa hiệu suất</li>
+                                </ul>
+
+                                <h5>V. Khóa đào tạo Lập trình viên Fullstack trực tiếp chỉ có tại ATCollabo</h5>
+                                <ul>
+                                    <li>Cơ hội được học tập, trao đổi kiến thức kinh nghiệm với giảng viên Hàn Quốc hơn 30 năm kinh nghiệm trong lĩnh vực Công nghệ Thông tin</li>
+                                    <li>Học tập và tương tác trực tiếp với giảng viên ngay tại lớp học, giúp học viên nắm bắt bài giảng và giải đáp thắc mắc kịp thời.</li>
+                                    <li>Số lượng học viên ít chỉ từ 16-25 học viên.</li>
+                                    <li>Phòng học trang bị đầy đủ thiết bị hiện đại, đáp ứng mọi nhu cầu học tập và nghỉ ngơi của học viên.</li>
+                                    <li>Giấy chứng nhận hoàn thành và giới thiệu việc làm cho học viên xuất sắc sau khi kết thúc khóa đào tạo.</li>
+                                </ul>
+
+
+                                <div class="wrapper-iframe" id="register-form">
+                                    <iframe class="iframe-form" aria-label='Đăng ký thông tin tư vấn khóa học' frameborder="0"
+                                            style="height:95rem;width:99%;border:none;overflow: auto;"
+                                            src='https://forms.zohopublic.com/atcollabo/form/ngkkhahc/formperma/gQswzUWCp9AVo1cnp_LJJ7JWKshhCTkEsJrIChl5TVE'></iframe>
+                                </div>
+                                <p>Nếu bạn có bất kỳ thắc mắc gì về khóa học hãy liên hệ với ATCollabo Academy để được giải đáp nhanh chóng nhé</p>
+                                <p><strong>ATCollabo Academy</strong></p>
+                                <p><strong>Smart Challenge, Education starts with excitement</strong></p>
+                                <p><strong>Add:3F, Paxsky building, 26 Ung Van Khiem, 25 Ward, Binh Thanh dist, HCMC</strong> </p>
+                                <p><strong>Hotline: 0867-399-188</strong></p>
+                                <p><strong>Email:recruitment@atcollabo.com</strong> </p>
+                                <p><strong>Website:https://atcollabo.com/</strong></p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->
+<section th:insert="fragments/general.html :: footer-banner" id="foot-banner"
+         class="ftco-intro py-5 bg-primary"></section>
+<footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->
+
+<!-- SCRIPTS -->
+<div th:insert="fragments/general.html :: jslibs"></div>
+
+<script th:inline="javascript">
+
+
+</script>
+
+
+</body>
+
+</html>

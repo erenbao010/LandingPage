@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="fragments/general.html :: headerfiles">
+<!-- copied from fragments.html -->
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+    <header th:insert="fragments/general.html :: header" id="header" class="top-wrap"> </header>
+	<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+  <section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('images/bg_4-1.jpg?v=2');">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 pt-5 mt-5 text-center">
+          <p class="breadcrumbs">
+            <span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+            <span>R&D <i class="fa fa-chevron-right"></i></span>
+          </p>
+          <h1 class="mb-0 bread ">RESEARCH & DEVELOPMENT</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+  <section class="ftco-section testimony-section bg-light">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-md-12 main-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          ATC R&D, places a major focus on shaping the future of IT. We uncover new businesses based on high-end
+          technologies and devote our energy to continuous research in the IT field, introducing and evolving
+          cutting-edge technologies. Furthermore, we develop new solutions based on our extensive experience and insight
+          to deliver value to our customers. This is realized through technical support and technology-based consulting
+          for sales activities, maintaining close cooperation with our customers. In addition, we aim to provide the
+          highest level of customer service through quality management, ensuring high-quality results in all projects.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- START PROJECTS -->
+  <section class="ftco-section courses-section">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+          <h2 class="mb-5">FEATURED PROJECTS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-lg-12" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+          <div class="courses course-custom course-row">
+            <img src="images/r-and-d/k-media.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-12" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+          <div class="courses course-custom course-row">
+            <img src="images/r-and-d/dong-seo.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-12" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+          <div class="courses course-custom course-row">
+            <img src="images/r-and-d/eaglecock.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-12" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+          <div class="courses course-custom course-row">
+            <img src="images/r-and-d/peraswipe.png" alt="" class="img-fluid">
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+  <!-- END TEAM -->
+
+  <!-- START TECHNOLOGY -->
+  <section class="ftco-section courses-section">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+          <h2 class="mb-5">TECHNOLOGY</h2>
+        </div>
+      </div>
+      <div class="row">
+
+        <img src="images/bg_r_and_d.jpg" alt="">
+
+
+      </div>
+    </div>
+  </section>
+  <!-- END TECHNOLOGY -->
+
+  <!-- START TEAM -->
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+          <h2 class="mb-5">CORE LEADERS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/HwangDaeHwan\(Michael\).jpeg?v=1);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Hwang Dae Hwan (Michael)</h3>
+              <ul class="meta">
+                <li>30 years of industry experience</li>
+                <li>Master of Engineering, Korea University</li>
+                <li>CISA(Certified Information Systems Auditor)</li>
+                <li>CSM(Certified ScrumMaster)</li>
+                <li>Adjunct professor at a Korean university</li>
+                <li>Evangelist Specializing in the Latest Information Technology Innovations
+                <li>MS MVP award winner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/KimJungHyun_Ryan.jpeg);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Kim Jung Hyun (Ryan)</h3>
+              <ul class="meta">
+                <li>30 years of industry experience</li>
+                <li>MEDIA PLATFORM DEVELOPEMENT TEAM LEADER AT SK BROADBAND</li>
+                <li>KOREA'S LEADING IPTV & OTT  PLATFORM ARCHITECT</li>
+                <li>Technical architect for handling over a million concurrent users</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="staff">
+            <div class="img" style="background-image: url(images/mentors/JangDaeKyung_Mario.jpeg);">
+              <ul class="ftco-social">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+            <div class="text">
+              <h3>Jang Dae Kyung (Mario)</h3>
+              <ul class="meta">
+                <li>15 years of industry experience</li>
+                <li>Software Development Specialist (E-commerce, Corporate Intranet and ERP, Education LMS and CMS)</li>
+                <li>Software Professional Developer Training (Instructor)</li>
+                <li>Teaching Software (Korea Institute for Education Certificates)</li>
+                <li>Industrial Engineer Information Processing (Human Resources Development service of Korea)</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END TEAM -->
+
+  <section class="ftco-section bg-light">
+    <div class="container">
+      <div class="row no-gutters justify-content-center">
+        <div class="col-md-12">
+          <div class="wrapper">
+            <div class="row g-0">
+              <div class="col-lg-12 order-lg-last">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <h3>CONTACT US</h3>
+                  <p class="mb-4">We're open for any suggestion or just to have a chat</p>
+                  <div class="row mb-4">
+                    <div class="col-md-4">
+                      <div class="dbox w-100 d-flex align-items-start">
+                        <div class="text">
+                          <p><span>Address:</span> <!-- 3F, Paxsky building, 26 Ung Van Khiem, 25 ward, Bình Thạnh dist, HCMC -->
+                          [[${site.siteAddress}]]
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dbox w-100 d-flex align-items-start">
+                        <div class="text">
+                          <p><span>Email:</span> <a th:href="|mailto:${site.siteEmail1}|">[[${site.siteEmail1}]]</a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dbox w-100 d-flex align-items-start">
+                        <div class="text">
+                          <p><span>Phone:</span> <a th:href="|tel://${site.sitePhone}|">[[${site.sitePhone}]]</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <form id="contactForm" name="contactForm" class="contactForm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="phone" class="form-control" name="phone" id="subject" placeholder="Phone">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Create a message here"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="submit" value="Send Message" class="btn btn-primary">
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->    
+	<section th:insert="fragments/general.html :: footer-banner" id="foot-banner" class="ftco-intro py-5 bg-primary"></section>
+    <footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->    
+
+<!-- SCRIPTS -->
+    <div th:insert="fragments/general.html :: jslibs"></div>    
+
+</body>
+
+</html>

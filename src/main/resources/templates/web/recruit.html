@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="headerfiles">
+    <title>Recruitment & HR Consulting</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" content="/images/Thumnail.png">
+
+    <link rel="favicon" href="/favicon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/css/font.css?v=1">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/tiny-slider.css">
+    <link rel="stylesheet" href="/css/glightbox.min.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/style.css?v=1">
+    <link rel="stylesheet" href="/css/blog.css?v=2">
+    <link rel="stylesheet" href="/css/popup.css?v=1">
+    <link rel="stylesheet" href="/css/banner.css?v=1">
+    <link rel="stylesheet" href="/scss/custom.css?v=11">
+    <link rel="stylesheet" href="/scss/custom.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body class="noPrint" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<!-- HEADER -->
+<header th:insert="fragments/general.html :: header" id="header" class="top-wrap"></header>
+<nav th:insert="fragments/general.html :: navbar" id="menu" class="navbar navbar-expand-lg ftco-navbar-light"></nav>
+<section class="hero-wrap hero-wrap-2 section_about" style="background-image: url('/images/bg_4-1.jpg?v=2');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs">
+                    <span class="me-2"><a th:href="@{/index}">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span><a th:href="@{/services}">Services <i class="fa fa-chevron-right"></i></a></span>
+                </p>
+                <h1 class="mb-0 bread text-uppercase"> RECRUITMENT & HR CONSULTING</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	HEADER -->
+
+<!-- BODY -->
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row no-gutters justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div>
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <div class="container">
+                                <div class="mb-5">
+                                    <h1 class="text-center fw-bold fs-40" style="color: #000000">OUR SOLUTIONS
+                                    </h1>
+                                    <h5 class="text-center fw-normal fs-25" style="color:#999999"> Comprehensive human
+                                        resource solutions for technology businesses</h5>
+                                </div>
+
+                                <div
+                                        class="w3-content w3-section"
+                                        style="max-width: fit-content; display: flex; margin: 0 auto"
+                                >
+
+                                    <div class="row gap-3 mentor-desktop">
+                                        <div class="col px-0">
+                                            <img alt="" style="    width: 100%; margin-bottom:36px"
+                                                 src="/images/courses/Rectangle2.png">
+                                            <p class="fw-bold mb-0" style="color:#6A6A6A">
+                                                HR Consulting
+                                            </p>
+                                            <p>
+                                                We specialize in optimizing human resource strategies to ensure your
+                                                team is equipped for success in the fast-paced world of technology
+                                            </p>
+                                        </div>
+                                        <div class="col px-0">
+                                            <img alt="" style="  width: 100%; margin-bottom:36px"
+                                                 src="/images/courses/Rectangle3.png">
+                                            <p class="fw-bold mb-0" style="color:#6A6A6A">
+                                                L&D Consulting
+                                            </p>
+                                            <p>
+                                                We excel in identifying and securing top-tier talent, matching their
+                                                skills to your tech needs.
+                                            </p>
+                                        </div>
+                                        <div class="col px-0">
+                                            <img alt="" style="    width: 100%; margin-bottom:36px"
+                                                 src="/images/courses/Rectangle4.png">
+                                            <p class="fw-bold mb-0" style="color:#6A6A6A">
+                                                Recruitment Services
+                                            </p>
+                                            <p>
+                                                Our tailored programs empower your workforce with the latest skills and
+                                                knowledge in the fast-paced technology, ensuring continuous growth and
+                                                adaptability
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mentor-mobile">
+                                        <div class="mySlides">
+                                            <img alt="" style="width:100%"
+                                                 src="/images/courses/anh1.png">
+                                        </div>
+                                        <div class="mySlides">
+                                            <img src="/images/courses/anh2.png" style="width: 100%"/>
+                                        </div>
+                                        <div class="mySlides">
+                                            <img src="/images/courses/anh3.png" style="width: 100%"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END	BODY -->
+
+<!-- FOOTER -->
+<section th:insert="fragments/general.html :: footer-banner" id="foot-banner"
+         class="ftco-intro py-5 bg-primary"></section>
+<footer th:insert="fragments/general.html :: footer2" id="footer" class="ftco-footer"></footer>
+<!-- END	FOOTER -->
+
+<!-- SCRIPTS -->
+<div th:insert="fragments/general.html :: jslibs"></div>
+
+<script th:inline="javascript">
+
+
+</script>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+</script>
+
+</body>
+</html>

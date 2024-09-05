@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="headerfiles">
+
+  	<title>ATCollabo - Art & Tech Collaboration</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta property="og:image" th:content="@{/images/Thumnail.png}">
+
+  	<link rel="favicon" th:href="@{/favicon/favicon.ico}">
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
+
+	<!-- see /fonts/ roboto, merriweather, montserrat already have -->
+  	<link rel="stylesheet" th:href="@{/css/font.css?v=1}">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+  	<link rel="stylesheet" th:href="@{/css/animate.css}">
+  	<link rel="stylesheet" th:href="@{/css/flaticon.css}">
+  	<link rel="stylesheet" th:href="@{/css/tiny-slider.css}">
+  	<link rel="stylesheet" th:href="@{/css/glightbox.min.css}">
+  	<link rel="stylesheet" th:href="@{/css/aos.css}">
+  	<link rel="stylesheet" th:href="@{/css/style.css?v=1}">
+  	<link rel="stylesheet" th:href="@{/css/blog.css?v=2}">
+  	<link rel="stylesheet" th:href="@{/css/popup.css?v=1}">
+  	<link rel="stylesheet" th:href="@{/css/banner.css?v=1}">
+  	<link rel="stylesheet" th:href="@{/scss/custom.css?v=11}">
+
+  	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div th:fragment="header" th:replace="web/components/header.html" class="container"></div>
+    <div th:fragment="navbar" th:replace="web/components/menu.html" class="container-xl"></div>
+	<div th:fragment="footer-banner" th:replace="web/components/footBanner.html"></div>
+    <div th:fragment="footer" th:replace="web/components/footer.html"></div>
+    <div th:fragment="footer2">
+<!--     <footer class="ftco-footer">
+ -->
+ 		<div class="container-xl">
+        <div class="row mb-5 justify-content-between">
+          <div class="col-md-6 col-lg">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo d-flex">
+                <a class="navbar-brand align-items-center" href="index.html">
+                  ATCollabo
+                  <span>Art &amp; Technology  Collaboration</span>
+                </a>
+              </h2>
+              <p>ATCollabo is a trend leader in the edtech education market.</p>
+              <ul class="ftco-footer-social list-unstyled mt-2">
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Explore</h2>
+              <ul class="list-unstyled">
+                <li><a th:href="@{/about}"><span class="ion ion-ios-arrow-round-forward me-2"></span>About Us</a></li>
+<!--                <li><a th:href="@{/vrwareedu}"><span class="ion ion-ios-arrow-round-forward me-2"></span>VRWARE</a></li>-->
+                <li><a th:href="@{/summer-codingcamp}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Coding.Camp</a></li>
+                <li><a th:href="@{/magic-atio}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Magic.Atio</a></li>
+                <li><a th:href="@{/codepresso}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Code.Presso</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="contact.html"><span class="ion ion-ios-arrow-round-forward me-2"></span>Contact Us</a></li>
+                <li><a href="#"><span class="ion ion-ios-arrow-round-forward me-2"></span>Pricing</a></li>
+                <li><a href="#"><span class="ion ion-ios-arrow-round-forward me-2"></span>Terms &amp; Conditions</a></li>
+                <li><a href="#"><span class="ion ion-ios-arrow-round-forward me-2"></span>Privacy</a></li>
+                <li><a href="#"><span class="ion ion-ios-arrow-round-forward me-2"></span>Feedbacks</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Recent Posts</h2>
+              <div class="block-21 mb-4 d-flex" th:each="post : ${recentnews}">
+                <a class="blog-img img rounded" th:style="'background-image: url('+@{/api/image(fileName=${post.newsThums})}+');'"></a>
+                <div class="text">
+                  <div class="meta">
+                    <div><a href="#"><span class="fa fa-calendar"></span>&nbsp;[[${#temporals.format(post.dateCreate, 'MMM-dd,yyyy')}]]</a></div>
+                    <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                  </div>
+                  <h3 class="heading"><a th:href="@{|/blog/${#strings.replace(post.newsTitle,' ','_')}|}">[[${post.shortTitle}]]</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon fa fa-map marker"></span><span class="text">[[${site.siteAddress}]]</span></li>
+                  <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">[[${site.sitePhone}]]</span></a></li>
+                  <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">[[${site.siteEmail1}]]</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-0 py-5 bg-darken">
+        <div class="container-xl">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p class="mb-0" style="font-size: 14px;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener">Colorlib</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--     </footer>
+ -->
+	</div>
+
+    <div th:fragment="jslibs">
+	  	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	  	<script th:src="@{/js/tiny-slider.js}"></script>
+	  	<script th:src="@{/js/glightbox.min.js}"></script>
+	  	<script th:src="@{/js/aos.js}"></script>
+	  	<script th:src="@{/js/main.js?v=3}"></script>
+		<!-- Google 번역 					
+			includedLanguages: 'ko,zh-CN,zh-TW,ja,vi,th,tl,km,my,mn,ru,en,fr,ar',
+		-->
+		<script>
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({
+					pageLanguage: 'en',
+					includedLanguages: 'vi,ko,en,ja',
+					layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+					autoDisplay: false
+				}, 'google_translate_element');
+			}
+		</script>
+		<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<!-- //Google 번역 -->
+
+		<!-- ConveyThis code -->
+		<script src="//cdn.conveythis.com/javascript/conveythis-initializer.js"></script>
+		<script type="text/javascript">
+		/* 	document.addEventListener("DOMContentLoaded", function(e) {
+				ConveyThis_Initializer.init({
+					api_key: "pub_7bc307965dd469f9337b5bf58d475c46"
+				});
+			});
+		 */
+		 </script>
+		<!-- End ConveyThis code -->
+	  	
+		<!-- Common Script -->
+	  	<script>
+		    /* 스크립트 태그, 공백만 입력 시 false 반환	*/
+		    function checkInputText(t){
+		        const expScript = /[~^&()|<>?]/; 
+		        const expPhone = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/;//000-000-0000 전화번호 입력 형식
+		        if(expScript.test(t)){
+		        	console.error('invalid letter: ~ ^ & ( ) | < > ?');
+		        	return false;
+		        }
+		        const trimed = t.trim();
+		        if( trimed.length === 0 ){
+		        	console.error('only Space letter : need input text');
+		        	return false;
+		        }
+				return true;
+		    }
+	  	</script>
+		<!-- End	Common Script -->
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<title>ATCvengers</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"  rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link th:href="@{/admin/css/style.css}" rel="stylesheet" />    
+
+</head>
+<body>
+
+
+<header class="container-fluid">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">ATC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/admin}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/admin/blog}">News&Event</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hackathon
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/admin/hackathon/}">LIST</a></li>
+            <li><a class="dropdown-item" th:href="@{/admin/hackathon/put}">OPEN</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div style="height:24px;"></div>
+</header>
+	
+	<div class="container">
+		<table id="hackatable" class="table">
+			<thead>
+				<tr>
+					<td>NO</td>
+					<td>TITLE</td>
+					<td>ACTIVE</td>
+					<td>TYPE</td>
+					<td>PERIOD</td>
+					<td>THUMNAILS</td>
+					<td>REG</td><!-- 등록자 수 -->
+					<td>ONLINE</td><!-- 온라인 통과 수 -->
+					<td>OFFINE</td><!-- 오프라인 통과 수 -->
+					<td>FINAL</td><!-- 최종 수료 수 -->
+					<td>...</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="hacka : ${hackathonList}">
+					<td th:text="${hacka.hakPk}">NO</td>
+					<td th:text="${hacka.hakTitle}">TITLE</td>
+					<td th:text="${hacka.active}">ACTIVE</td>
+					<td th:text="${hacka.hakType}">TYPE</td>
+					<td th:text="|${hacka.hakStart} ~ ${hacka.hakEnd}|">PERIOD</td>
+					<td>
+						<img alt="1" th:src="@{/api/image(fileName=|s_${hacka.hakThums1}|)}">
+						<img alt="2" th:src="@{/api/image(fileName=|s_${hacka.hakThums2}|)}">
+						<img alt="3" th:src="@{/api/image(fileName=|s_${hacka.hakThums3}|)}">
+						<img alt="4" th:src="@{/api/image(fileName=|s_${hacka.hakThums4}|)}">
+					</td>
+					<td th:text="${hacka.hakRegisters}">...</td>
+					<td th:text="${hacka.hakOnpass}">...</td>
+					<td th:text="${hacka.hakOffpass}">...</td>
+					<td th:text="${hacka.hakWiners}">...</td>
+					<td>...</td>
+				</tr>
+			</tbody>
+		</table>
+			
+	</div><!-- // container -->
+
+	<footer class="container-fluid">
+		<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]</h1>
+		<br>
+		<h1 th:inline="text">username: [[${username}]]</h1>
+	 
+		<!--SYSTEM 역할을 갖는다면 이 글이 보임-->
+		<h3 sec:authorize="hasRole('ADMIN')">Has 'ADMIN' Role</h3>
+	 	 
+		<!--어떤 역할이건 상관없이 인증이 되었다면 이 글이 보임-->
+		<h3 sec:authorize="isAuthenticated()">Only Authenticated user can see this Text</h3>
+	 
+		<div>
+<!--  			Authorities : <span sec:authentication="principal.authorities"></span> -->
+ 		</div>
+		<br>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+
+	<script th:inline="javascript">
+		new DataTable('#hackatables',{
+			ordering: true,
+	        dom: 'Bfrtip',
+	        buttons: [
+	            'excel', 
+	            'pdf'
+	        ]
+		});
+	</script>
+
+</body>
+</html>
+
